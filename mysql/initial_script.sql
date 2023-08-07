@@ -33,10 +33,10 @@ VALUES
 DROP TABLE IF EXISTS `votaciones`;
 
 CREATE TABLE `votaciones` (
-  `rut` int(11) NOT NULL AUTO_INCREMENT,
+  `rut` varchar(11) NOT NULL,
   `nombreYapellido` varchar(64) NOT NULL,
-  `alias` varchar(11) NOT NULL,
-  `email` varchar(11) NOT NULL,
+  `alias` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `region_id` int(11) NOT NULL,
   `comuna_id` int(11) NOT NULL,
   `candidato_id` int(11) NOT NULL,
@@ -45,13 +45,13 @@ CREATE TABLE `votaciones` (
 
 
 #METODOS CONOCIMIENTO ELIMINAR
-#DROP TABLE IF EXISTS `metodo_conocimiento`;
+DROP TABLE IF EXISTS `metodo_conocimiento_votacion`;
 
-#CREATE TABLE `metodos_conocimiento` (
-#  `id` int(11) NOT NULL AUTO_INCREMENT,
-#  `name` varchar(64) NOT NULL,
-#  PRIMARY KEY (`id`)
-#) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
+CREATE TABLE `metodo_conocimiento_votacion` (
+  `rut_votacion` varchar(11) NOT NULL,
+  `metodo_conocimiento_id` int(11) NOT NULL,
+  PRIMARY KEY (`rut_votacion`,`metodo_conocimiento_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
 
 
 #COMUNAS

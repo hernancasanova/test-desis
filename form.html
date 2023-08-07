@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <title>FORMULARIO DE VOTACIÓN</title>
 </head>
 <body>
     <div class="form">
-        <form action="#" method="post">
+        <form id="form" method="post">
             <h2>FORMULARIO DE VOTACIÓN:</h2>
             <label for="fullName">Nombre y apellido</label>
-            <input id="fullName" name="fullName" type="text" required>
+            <input id="fullName" name="fullName" type="text">
             <label for="alias">Alias</label>
             <input id="alias" name="alias" type="text">
             <label for="rut">RUT</label>
             <input id="rut" name="rut" type="text">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" required>
+            <input id="email" name="email" type="email">
             <label for="regiones">Región</label>
             <select id="regiones" name="regiones">
                 <option value="">Seleccione</option>
@@ -32,16 +32,16 @@
                 <option value="">Seleccione</option>
             </select><br>
             <label for="">Como se enteró de nosotros</label>
-            <input type="checkbox">
+            <input type="checkbox" value="1" name="web">
             <label for="">Web</label>
-            <input type="checkbox">
+            <input type="checkbox" value="2" name="tv">
             <label for="">TV</label>
-            <input type="checkbox">
+            <input type="checkbox" value="3" name="rrss">
             <label for="">Redes Sociales</label>
-            <input type="checkbox">
+            <input type="checkbox" value="4" name="amigo">
             <label for="">Amigo</label>
             <br>
-            <button type="submit">Votar</button>
+            <button onclick="validateForm()" type="button">Votar</button>
         </form>
     </div>
 </body>
