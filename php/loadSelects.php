@@ -39,14 +39,18 @@ function returnSelectOption($select,$region=null){
     }
 }
 function votar($nombreYApellido,$alias,$rut,$email,$region,$comuna,$candidato,$metodos_conocimiento){
-    $sqlVerificaRutDuplicado="SELECT rut FROM votaciones WHERE rut='".$rut."'"; 
-    $sqlVoto="INSERT INTO votaciones (rut,nombreYapellido,alias,email,region_id,comuna_id,candidato_id) VALUES (".$rut.",'".$nombreYApellido."','".$alias."','".$email."',".$region.",".$comuna.",".$candidato.")";
-    //$sqlV="INSERT INTO votaciones (rut,nombreYapellido,alias,email,region_id,comuna_id,candidato_id) VALUES (".$rut.",'".$nombreYApellido."','".$alias."','".$email."',".$region.",".$comuna.",".$candidato.")";
     $mysqli = new mysqli('db', 'hernan', 'testdesis', 'sistema_votacion');
+    $sqlVerificaRutDuplicado="SELECT rut FROM votaciones WHERE rut='".$rut."'"; 
+    $sqlVoto="INSERT INTO votaciones (rut,nombreYapellido,alias,email,region_id,comuna_id,candidato_id) VALUES ('".$rut."','".$nombreYApellido."','".$alias."','".$email."',".$region.",".$comuna.",".$candidato.")";
     $queryVerificaRutDuplicado = mysqli_query($mysqli, $sqlVerificaRutDuplicado);
     //Si se detecta que el rut ya se encuentra registrado se devuelve el número de veces ya encontrado
     if(mysqli_num_rows($queryVerificaRutDuplicado)>0)return mysqli_num_rows($queryVerificaRutDuplicado);
     $queryVoto = mysqli_query($mysqli, $sqlVoto);
+    //Se registran las elecciones de la sección "Como se enteró de nosotros"
+    foreach ($metodos_conocimiento as $key => $value) {
+        $sqlMetodoConocimientoVotacion="INSERT INTO metodo_conocimiento_votacion (rut_votacion,metodo_conocimiento_id) VALUES ('".$rut."',".$value.")";
+        $queryMetodoConocimientoVotacion = mysqli_query($mysqli, $sqlMetodoConocimientoVotacion);
+    }
     //Si no se encuentra registrado el rut en la tabla de votaciones se devuelve cero para que el index.php traduzca este valor al mensaje correspondiente
     return 0;
 }

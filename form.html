@@ -4,33 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>FORMULARIO DE VOTACIÓN</title>
 </head>
 <body>
     <div class="form">
-        <form id="form" method="post">
+        <form id="form">
             <h2>FORMULARIO DE VOTACIÓN:</h2>
             <label for="fullName">Nombre y apellido</label>
-            <input id="fullName" name="fullName" type="text">
+            <input id="fullName" name="fullName" type="text" required>
+            <div id="errorFullName" class="msg-error">
+
+            </div>
             <label for="alias">Alias</label>
             <input id="alias" name="alias" type="text">
+            <div id="errorAlias" class="msg-error">
+
+            </div>
             <label for="rut">RUT</label>
             <input id="rut" name="rut" type="text">
+            <div id="errorRut" class="msg-error">
+
+            </div>
             <label for="email">Email</label>
             <input id="email" name="email" type="email">
+            <div id="errorEmail" class="msg-error">
+
+            </div>
             <label for="regiones">Región</label>
             <select id="regiones" name="regiones">
                 <option value="">Seleccione</option>
             </select><br>
+            <div id="errorRegion" class="msg-error">
+
+            </div>
             <label for="comunas">Comuna</label>
             <select id="comunas" name="comunas">
                 <option value="">Seleccione</option>
             </select><br>
+            <div id="errorComuna" class="msg-error">
+
+            </div>
             <label for="candidatos">Candidato</label>
             <select id="candidatos" name="candidatos">
                 <option value="">Seleccione</option>
             </select><br>
+            <div id="errorCandidato" class="msg-error">
+
+            </div>
             <label for="">Como se enteró de nosotros</label>
             <input type="checkbox" value="1" name="web">
             <label for="">Web</label>
@@ -41,7 +63,10 @@
             <input type="checkbox" value="4" name="amigo">
             <label for="">Amigo</label>
             <br>
-            <button onclick="validateForm()" type="button">Votar</button>
+            <div id="errorMetodosConocimiento" class="msg-error">
+
+            </div>
+            <button class="btn btn-primary" onclick="validateForm()" type="button">Votar</button>
         </form>
     </div>
 </body>

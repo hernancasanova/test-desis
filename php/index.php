@@ -25,7 +25,7 @@ if($uri=='/regiones'){
     $metodos_conocimiento=$_POST["metodos_escogidos"];
     $resultado=votar($nombreYApellido,$alias,$rut,$email,$region,$comuna,$candidato,$metodos_conocimiento);
     //echo json_encode($resultado);
-    echo json_encode($resultado==0?"Se ha registrado correctamente la votación".$resultado:"El rut ingresado ya ha emitido su voto");    
+    echo json_encode($resultado==0?"Se ha registrado correctamente la votación":"El rut ingresado ya ha emitido su voto");    
 }else{
     $region=substr($uri,9);
     $comunas=returnSelectOption("comunas",$region);

@@ -1,0 +1,6 @@
+1) Software requerido:
+    -docker y docker-compose.
+2) Pasos para ejecutar la aplicación: 
+    -Dentro del directorio del proyecto levantar contenedores de la aplicación con docker-compose con el comando: docker-compose up.
+    -Esperar algunos minutos para asegurarse que el script de creación de la base de datos se ejecute correctamente.
+    -Abrir el archivo form.html y probar la aplicación.
