@@ -1,27 +1,27 @@
 #CANDIDATO
-DROP TABLE IF EXISTS `candidato`;
+DROP TABLE IF EXISTS `candidatos`;
 
-CREATE TABLE `candidato` (
+CREATE TABLE `candidatos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
 
-INSERT INTO `candidato` (`id`,`nombre`)
+INSERT INTO `candidatos` (`id`,`nombre`)
 VALUES
 	(1,'Gabriel boric'),
 	(2,'José antonio kast');
 
-#METODO CONOCIMIENTO
-DROP TABLE IF EXISTS `metodo_conocimiento`;
+#METODOS CONOCIMIENTO
+DROP TABLE IF EXISTS `metodos_conocimiento`;
 
-CREATE TABLE `metodo_conocimiento` (
+CREATE TABLE `metodos_conocimiento` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
 
-INSERT INTO `metodo_conocimiento` (`id`,`nombre`)
+INSERT INTO `metodos_conocimiento` (`id`,`nombre`)
 VALUES
 	(1,'Web'),
 	(2,'TV'),
@@ -44,14 +44,14 @@ CREATE TABLE `votaciones` (
 ) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
 
 
-#METODO CONOCIMIENTO
-DROP TABLE IF EXISTS `metodo_conocimiento`;
+#METODOS CONOCIMIENTO ELIMINAR
+#DROP TABLE IF EXISTS `metodo_conocimiento`;
 
-CREATE TABLE `metodo_conocimiento` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
+#CREATE TABLE `metodos_conocimiento` (
+#  `id` int(11) NOT NULL AUTO_INCREMENT,
+#  `name` varchar(64) NOT NULL,
+#  PRIMARY KEY (`id`)
+#) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
 
 
 #COMUNAS
