@@ -13,7 +13,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./mysql:/docker-entrypoint-initdb.d
+      - ./sql:/docker-entrypoint-initdb.d
     networks:
       - testdesis
       - default

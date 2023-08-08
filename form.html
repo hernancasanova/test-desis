@@ -4,73 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>FORMULARIO DE VOTACIÓN</title>
 </head>
 <body>
     <div class="form">
         <form id="form">
-            <h2>FORMULARIO DE VOTACIÓN:</h2>
-            <label for="fullName">Nombre y apellido</label>
-            <input id="fullName" name="fullName" type="text" required>
+            <p>FORMULARIO DE VOTACIÓN:</p>
+
+            <div class="form-group mb-2">
+                <label for="fullName">Nombre y apellido</label>
+                <input class="form-control"  id="fullName" name="fullName" type="text">
+            </div>
             <div id="errorFullName" class="msg-error">
-
             </div>
-            <label for="alias">Alias</label>
-            <input id="alias" name="alias" type="text">
+
+            <div class="form-group mb-2">
+                <label for="alias">Alias</label>
+                <input class="form-control" id="alias" name="alias" type="text">
+            </div>
             <div id="errorAlias" class="msg-error">
-
             </div>
-            <label for="rut">RUT</label>
-            <input id="rut" name="rut" type="text">
+
+            <div class="form-group mb-2">
+                <label for="rut">RUT</label>
+                <input class="form-control" id="rut" name="rut" type="text">
+            </div>
             <div id="errorRut" class="msg-error">
-
             </div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email">
+
+            <div class="form-group mb-2">
+                <label for="email">Email</label>
+                <input class="form-control"  id="email" name="email" type="email">
+            </div>
             <div id="errorEmail" class="msg-error">
-
             </div>
-            <label for="regiones">Región</label>
-            <select id="regiones" name="regiones">
-                <option value="">Seleccione</option>
-            </select><br>
+
+            <div class="form-group mb-2">
+                <label for="regiones">Región</label>
+                <select class="form-select"  id="regiones" name="regiones">
+                    <option value="">Seleccione</option>
+                </select>
+            </div>
             <div id="errorRegion" class="msg-error">
-
             </div>
-            <label for="comunas">Comuna</label>
-            <select id="comunas" name="comunas">
-                <option value="">Seleccione</option>
-            </select><br>
+
+            <div class="form-group mb-2">
+                <label for="comunas">Comuna</label>
+                <select class="form-select" id="comunas" name="comunas">
+                    <option value="">Seleccione</option>
+                </select>
+            </div>
             <div id="errorComuna" class="msg-error">
-
             </div>
-            <label for="candidatos">Candidato</label>
-            <select id="candidatos" name="candidatos">
-                <option value="">Seleccione</option>
-            </select><br>
+
+            <div class="form-group mb-2">
+                <label for="candidatos">Candidato</label>
+                <select class="form-select" id="candidatos" name="candidatos">
+                    <option value="">Seleccione</option>
+                </select>
+            </div>
             <div id="errorCandidato" class="msg-error">
-
             </div>
-            <label for="">Como se enteró de nosotros</label>
-            <input type="checkbox" value="1" name="web">
-            <label for="">Web</label>
-            <input type="checkbox" value="2" name="tv">
-            <label for="">TV</label>
-            <input type="checkbox" value="3" name="rrss">
-            <label for="">Redes Sociales</label>
-            <input type="checkbox" value="4" name="amigo">
-            <label for="">Amigo</label>
-            <br>
+
+            <div class="form-check mb-2">
+                <label for="">Como se enteró de nosotros:    </label>
+                <input type="checkbox" value="1" name="web">
+                <label for="">Web</label>
+                <input type="checkbox" value="2" name="tv">
+                <label for="">TV</label>
+                <input type="checkbox" value="3" name="rrss">
+                <label for="">Redes Sociales</label>
+                <input type="checkbox" value="4" name="amigo">
+                <label for="">Amigo</label>
+            </div>
             <div id="errorMetodosConocimiento" class="msg-error">
-
             </div>
+
             <button class="btn btn-primary" onclick="validateForm()" type="button">Votar</button>
         </form>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
 </html>

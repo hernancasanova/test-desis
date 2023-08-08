@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS `candidatos`;
 
 CREATE TABLE `candidatos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
@@ -40,9 +40,19 @@ CREATE TABLE `votaciones` (
   `region_id` int(11) NOT NULL,
   `comuna_id` int(11) NOT NULL,
   `candidato_id` int(11) NOT NULL,
-  PRIMARY KEY (`rut`)
+  PRIMARY KEY (`rut`),
+  KEY `votaciones_region_id_foreign` (`region_id`),
+  CONSTRAINT `votaciones_region_id_foreign` FOREIGN KEY (`region_id`) REFERENCES `regiones` (`id`) ON DELETE CASCADE,
+  KEY `votaciones_comuna_id_foreign` (`comuna_id`),
+  CONSTRAINT `votaciones_comuna_id_foreign` FOREIGN KEY (`comuna_id`) REFERENCES `comunas` (`id`) ON DELETE CASCADE,
+  KEY `votaciones_candidato_id_foreign` (`candidato_id`),
+  CONSTRAINT `votaciones_candidato_id_foreign` FOREIGN KEY (`candidato_id`) REFERENCES `candidatos` (`id`) ON DELETE CASCADE
 ) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=utf8;
 
+ALTER TABLE votaciones
+ADD CONSTRAINT `fk_votaciones_candidato`
+FOREIGN KEY (`candidato_id`)
+REFERENCES candidatos(`id`);
 
 #METODOS CONOCIMIENTO ELIMINAR
 DROP TABLE IF EXISTS `metodo_conocimiento_votacion`;
